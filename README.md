@@ -105,3 +105,19 @@ I'm all ears.
 * Local development may or may not make use of DAGs.  It should be running tests.
 * CI should be generating dags and executing tests.
 * When a project is deployed the DAG artifacts should be uploaded to Airflow for execution.
+* One potential pattern for integrating this would be to maintain a list of unused sources and sinks.
+* When CI generates a new document that includes a new source / sink that is unused it should trigger a warning.
+
+## Open questions:
+* The testing pattern seems potentially questionable, if we're defining how the DAG ought to look in tests then
+why not just use that as the source of truth?  
+* Can we leverage this: https://github.com/rambler-digital-solutions/airflow-declarative
+* Presumably we want to be able to pass through variables to the underlying DAG / operator.
+  * We could provide a syntax that allows for pass through IE something that looks like this:
+```python
+@dag:passthrough: """
+compute_cpu = 2
+compute_ram = 12
+operator: kubernetes_operator
+"""
+```
