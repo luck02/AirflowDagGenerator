@@ -7,24 +7,25 @@ it's hard to keep them sorted and logical.
 * We want to add annotations to the raw python code of the format:
 In module 'a':
 ```python
-@dependency:database:origin_schema.table
+@dependency("database:origin_schema.table")
+#dependency:database:origin_schema.table")
 def get_source_data(etc: etc):
   #select * from schema.table
   
   
-@sink:s3:bucket/path
+@sink("s3:bucket/path")
 def write_to_destination(values: val):
   #val.write_to_s3('s3a://bucket/path')
 ```
 
 In module 'b':
 ```python
-@dependency:s3:bucket/path
+@dependency("s3:bucket/path")
 def get_data():
     data = s3Reader('s3a://bucket/path')
 
 
-@sink:database:destination_schema.table
+@sink(database:destination_schema.table)
 def save_data(values: val):
     values.write.jdbc("destination_schema.table")
 ```
