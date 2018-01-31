@@ -1,0 +1,13 @@
+name: test_orchestration
+details:
+  cron: "0 8 * * *"
+  compute_requirements:
+    cpu: "4"
+    ram: "8GB"
+dependencies:
+  db: "schema.table"
+sinks:
+  s3:
+    bucket: "bucket"
+    path: "path"
+    filename: "filename"
