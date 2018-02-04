@@ -122,3 +122,7 @@ compute_ram = 12
 operator: kubernetes_operator
 """
 ```
+
+
+# notes:
+Seems to require `export PYTHONPATH=./` in order for tests to find root.  Not sure why

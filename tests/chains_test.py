@@ -1,15 +1,25 @@
 from chains import chains
 import io
 
-def extract_chains():
+def test_extract_chains():
     doc = """
 # generic comment
 #@chains:name
 some python code etc etc.
     """
     stream = io.StringIO(doc)
-    comments = chains.extractComments(stream)
-    print(comments)
-    assert(len(comments) == 1)
+    chain = chains.extract_comments(stream)
+    print(type(chain))
+    assert(len(chain) == 1)
 
-    assert(comments[0] == "#@chains:name\n")
+    assert(chain[0] == "#@chains:name\n")
+
+def test_parse_chain():
+    doc = """
+#@chains:task:name:some_name
+    """
+
+    token = chains.Token(doc)
+
+    print(token)
+    assert(False)
