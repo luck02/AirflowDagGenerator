@@ -102,3 +102,5 @@ ENV/
 
 # ide cruft
 .idea
+
+.pytest_cache/
