@@ -31,9 +31,9 @@ Axis of comparison:
   * find a DSL for DAG's that supports our required primitives or invent one. 
     * A DAG is 
     <code>
-    job --> job --> job --> job --> job
-        --> job --> job --> job -->  ^
-      ^ -->  ^  --> job ---------->  ^
+    job --> job --> job --> job --> job  
+        --> job --> job --> job -->  ^  
+      ^ -->  ^  --> job ---------->  ^  
    </code>
     * primitives are:
       * DAG 
