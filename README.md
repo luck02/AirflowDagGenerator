@@ -29,9 +29,10 @@ Axis of comparison:
   * Initial thoughts are let the execution handle this, detecting when to recompute isn't a trivial task and will probably need either a nuclear option (recompute on every change) or very manual steps etc.
 * Dependency chains:
   * find a DSL for DAG's that supports our required primitives or invent one. 
-    * DAG is job --> job --> job --> job --> job
-                 --> job --> job --> job -->  ^
-               ^ -->  ^  --> job ---------->  ^
+    * A DAG is 
+    job --> job --> job --> job --> job
+        --> job --> job --> job -->  ^
+      ^ -->  ^  --> job ---------->  ^
     * primitives are:
       * DAG 
         * Schedule
