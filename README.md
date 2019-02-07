@@ -32,7 +32,9 @@ Axis of comparison:
     * A DAG is 
     <code>
     job --> job --> job --> job --> job  
+ 
         --> job --> job --> job -->  ^  
+        
       ^ -->  ^  --> job ---------->  ^  
    </code>
     * primitives are:
