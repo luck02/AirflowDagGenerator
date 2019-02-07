@@ -30,9 +30,11 @@ Axis of comparison:
 * Dependency chains:
   * find a DSL for DAG's that supports our required primitives or invent one. 
     * A DAG is 
+    `
     job --> job --> job --> job --> job
         --> job --> job --> job -->  ^
       ^ -->  ^  --> job ---------->  ^
+    `
     * primitives are:
       * DAG 
         * Schedule
